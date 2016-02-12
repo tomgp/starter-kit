@@ -1,4 +1,7 @@
-'use strict';
-require('babelify/polyfill'); //remove this line if you don't care about ES6 pollyfils
+import as ExtraMaths from './module';
 
-console.log('Hey! Ho! Let\'s go!'); //remove this line if you don't care about The Ramones
+export default function () {
+	//console.log(square(11)); // 121
+	console.log(ExtraMaths.diag(4, 3)); // 5
+}
+

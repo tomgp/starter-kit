@@ -1,18 +1,15 @@
 {
   "name": "tgp-starter-kit",
   "version": "1.0.0",
-  "description": "A quick start for developing client side stuff using ES6 with polyfills etc.",
+  "description": "A quick start for developing client side stuff",
   "main": "index.js",
   "scripts": {
-  	"watch": "watchify ./source/main.js -o ./bundle.js | node ./node_modules/srvlr/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rollup": "./node_modules/rollup/bin/rollup -f iife -n starter source/main.js -o bundle.js",
+    "watch": "nodemon --ignore bundle.js ./node_modules/rollup/bin/rollup -f iife -n starter source/main.js -o bundle.js"
   },
   "author": "tom.g.pearson@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "babelify": "^6.3.0",
-    "browserify": "^11.2.0",
-    "srvlr": "^0.5.0",
-    "watchify": "^3.4.0"
+    "rollup": "0.25"
   }
 }
